@@ -4,29 +4,55 @@ A lightweight browser card game inspired by classic UNO-style rules, re-themed a
 
 ## Current build
 
-- 4-player game: Dr. Harlow vs Barney, Ratthew and Ron
-- complete 108-card deck
+- 4-player game: Intern vs Barney, Ratthew and Ron from Accounting
+- 100-card custom deck — **Draw Two / +2 cards are intentionally removed**
 - matching by color / number / action
-- Skip, Reverse, Draw Two, Wild and Wild Draw Four
-- Wild Draw Four legality check
-- one-card draw flow with optional play/pass
-- UNO declaration and +2 penalty when missed
-- simple host-side-style bot decision logic
+- Skip, Reverse, Wild and Wild +4
+- Wild +4 legality check
+- one-card draw flow with optional play/pass; after drawing, only the drawn card may be played
+- UNO declaration and two-card penalty when missed
+- simple bot decision logic
 - responsive desktop, tablet, phone portrait and phone landscape layouts
 - reduced-motion support
-- no external runtime dependencies: open `index.html` directly
+- no build step or external runtime library required
 - debug hook: `window.AnimalUNO`
 
-## Theme mapping
+## Character-front card design
 
-The four standard colors are presented as hospital departments:
+The cards now follow the approved themed-UNO direction: the **characters and anomalies are on the card fronts**, while the four standard colors stay mechanically independent.
 
-- Red — Emergency
-- Blue — Diagnostics
-- Green — Recovery
-- Yellow — Pharmacy
+Number cards:
 
-The visual direction starts from the supplied SKAT baseline: cards remain the dominant objects, the table has physical depth, active states use a warm gold accent, and the interface stays dark enough for the cards to remain highly legible. The theme is shifted from a formal card room toward a playful late-night veterinary clinic.
+- `0` — Officer Duckman
+- `1` — Dr. Harlow
+- `2` — Barney
+- `3` — Ratthew
+- `4` — Ron from Accounting
+- `5` — Liz
+- `6` — Sam
+- `7` — Black Eyes
+- `8` — Hollow Face
+- `9` — Mismatching Face
+
+Special cards:
+
+- **Skip** — Smiling with Creepy Eyes
+- **Reverse** — Three Eyes
+- **Wild** — Ghost
+- **Wild +4** — Stalker
+
+The portraits are bundled as a local sprite under `assets/animaluno-portraits.svg`, so the game remains self-contained and does not hotlink the reference wiki.
+
+## Colors
+
+AnimalUNO keeps four standard playable colors:
+
+- Red
+- Blue
+- Green
+- Yellow
+
+The visual direction uses a dark Animal Hospital night-shift card room, strong physical card depth, black rounded card borders and high-contrast character portraits.
 
 ## Run
 
