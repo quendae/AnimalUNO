@@ -5,13 +5,14 @@ A lightweight browser card game inspired by classic UNO-style rules, re-themed a
 ## Current build
 
 - 4-player game: Intern vs Barney, Ratthew and Ron from Accounting
-- 100-card custom deck — **Draw Two / +2 cards are intentionally removed**
+- complete 108-card deck
 - matching by color / number / action
-- Skip, Reverse, Wild and Wild +4
-- Wild +4 legality check
+- Draw Two / +2, Skip, Reverse, Wild and Wild +4
+- **house rule: Draw Two / +2 cards can be stacked**; the penalty grows `+2 → +4 → +6 → +8...` until a player cannot answer with another +2
+- Wild +4 legality check; Wild +4 does not participate in the +2 stacking chain
 - one-card draw flow with optional play/pass; after drawing, only the drawn card may be played
 - UNO declaration and two-card penalty when missed
-- simple bot decision logic
+- simple bot decision logic, including +2 chain decisions
 - responsive desktop, tablet, phone portrait and phone landscape layouts
 - reduced-motion support
 - no build step or external runtime library required
@@ -19,7 +20,7 @@ A lightweight browser card game inspired by classic UNO-style rules, re-themed a
 
 ## Character-front card design
 
-The cards now follow the approved themed-UNO direction: the **characters and anomalies are on the card fronts**, while the four standard colors stay mechanically independent.
+The cards follow the approved themed-UNO direction: the **characters and anomalies are on the card fronts**, while the four standard colors stay mechanically independent.
 
 Number cards:
 
@@ -36,6 +37,7 @@ Number cards:
 
 Special cards:
 
+- **Draw Two / +2** — Shopkeeper Nurse
 - **Skip** — Smiling with Creepy Eyes
 - **Reverse** — Three Eyes
 - **Wild** — Ghost
@@ -53,6 +55,15 @@ AnimalUNO keeps four standard playable colors:
 - Yellow
 
 The visual direction uses a dark Animal Hospital night-shift card room, strong physical card depth, black rounded card borders and high-contrast character portraits.
+
+## Draw Two stacking house rule
+
+When a player receives a pending `+2`, they have two options:
+
+1. play another `+2`, adding two more cards to the pending penalty and passing the chain to the next player, or
+2. take the full accumulated penalty and lose the turn.
+
+Only `+2` cards extend this chain. Wild +4 remains a separate effect.
 
 ## Run
 
