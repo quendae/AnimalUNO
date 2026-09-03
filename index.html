@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AnimalUNO — Animal Hospital</title>
 <link rel="stylesheet" href="style.css?v=portraits2">
+<link rel="stylesheet" href="cards-redesign.css?v=1">
 
 </head>
 <body>
@@ -16,9 +17,9 @@
 </header>
 <div class="main">
 <aside class="sidebar">
-  <section class="panel"><span class="eyebrow">approved card system</span><h2>Postacie na frontach</h2><p>Każda wartość ma przypisaną postać lub anomalię. Kolor nadal odpowiada klasycznemu kolorowi UNO — grafika jest niezależna od koloru.</p></section>
-  <section class="panel"><h3>Numer cards</h3><div class="cast"><span>0 · Duckman</span><span>1 · Harlow</span><span>2 · Barney</span><span>3 · Ratthew</span><span>4 · Ron</span><span>5 · Liz</span><span>6 · Sam</span><span>7 · Black Eyes</span><span>8 · Hollow Face</span><span>9 · Mismatching Face</span></div></section>
-  <section class="panel"><h3>Special cards</h3><p><b>Draw Two</b> — Shopkeeper Nurse<br><b>Skip</b> — Smiling with Creepy Eyes<br><b>Reverse</b> — Three Eyes<br><b>Wild</b> — Ghost<br><b>Wild +4</b> — Stalker</p></section>
+  <section class="panel"><span class="eyebrow">Animal Hospital card families</span><h2>Cztery strony nocnego dyżuru</h2><p>Każdy klasyczny kolor UNO ma własną rodzinę motywów. Numer i akcja pozostają duże i czytelne, a ilustracja oraz nazwa pokazują lore Animal Hospital.</p></section>
+  <section class="panel"><h3>Card families</h3><div class="cast"><span>🔴 Enemies</span><span>🔵 Characters</span><span>🟢 Classes</span><span>🟡 Anomalies</span></div></section>
+  <section class="panel"><h3>Special cards</h3><p><b>Skip</b> — lockdown / quarantine / camera stare<br><b>Reverse</b> — shapeshift / reroute / mismatch<br><b>Draw Two</b> — escalating hospital incident<br><b>Wild</b> — Ghost · Night Shift<br><b>Wild +4</b> — Stalker · Emergency</p></section>
   <section class="panel log"><h3>Shift log</h3><div id="log"></div></section>
 </aside>
 <main class="scene-wrap"><section class="table" id="table">
@@ -32,11 +33,12 @@
 </section></main>
 </div></div>
 <div class="toast" id="toast"></div>
-<div class="overlay show" id="startOverlay"><div class="modal"><span class="eyebrow">Animal Hospital after hours</span><h1>AnimalUNO</h1><p>Tematyczna talia z postaciami i anomaliami na frontach. Zasady są inspirowane UNO, ale wraca karta <b>+2</b> i może się stackować jako house rule. Talia ma 108 kart.</p><div class="menu-grid"><div class="menu-box"><b>Draw Two</b><p>Shopkeeper Nurse każe następnemu graczowi dobrać 2. +2 można stackować.</p></div><div class="menu-box"><b>Wild</b><p>Ghost wybiera nowy kolor.</p></div><div class="menu-box"><b>Wild +4</b><p>Stalker zmienia kolor, następny gracz dobiera 4 i traci turę.</p></div></div><div class="menu-buttons"><button class="btn primary" id="startBtn">Rozpocznij grę</button><button class="btn" id="menuRulesBtn">Zasady</button></div></div></div>
-<div class="overlay" id="rulesOverlay"><div class="modal"><span class="eyebrow">rules</span><h2>Zasady AnimalUNO</h2><div class="rules-grid"><div class="rule"><b>Dopasowanie</b><br>Kolor, numer albo typ karty specjalnej.</div><div class="rule"><b>Dobieranie</b><br>Dobierasz jedną kartę. Jeśli pasuje, możesz zagrać tylko tę dobraną kartę albo spasować.</div><div class="rule"><b>Skip</b><br>Smiling with Creepy Eyes pomija następnego gracza.</div><div class="rule"><b>Reverse</b><br>Three Eyes zmienia kierunek kolejki.</div><div class="rule"><b>Draw Two</b><br>Shopkeeper Nurse daje +2. Jeśli kolejny gracz ma +2, może dołożyć swoją kartę i przekazać większą karę dalej.</div><div class="rule"><b>Wild</b><br>Ghost pozwala wybrać dowolny kolor.</div><div class="rule"><b>Wild +4</b><br>Stalker jest legalny tylko gdy nie masz karty aktualnego koloru. Następny gracz dobiera 4 i traci turę.</div><div class="rule"><b>UNO</b><br>Przy dwóch kartach zgłoś UNO przed zagraniem przedostatniej. Brak deklaracji oznacza karę dwóch kart.</div></div><div class="menu-buttons"><button class="btn primary" id="closeRulesBtn">Zamknij</button></div></div></div>
+<div class="overlay show" id="startOverlay"><div class="modal"><span class="eyebrow">Animal Hospital after hours</span><h1>AnimalUNO</h1><p>Tematyczna talia 108 kart: <b>Enemies</b>, <b>Characters</b>, <b>Classes</b> i <b>Anomalies</b>. Zasady są inspirowane UNO, a +2 może się stackować jako house rule.</p><div class="menu-grid"><div class="menu-box"><b>Red · Enemies</b><p>Bed Monster, Stalker, Mass of Eyes, Skinwalker i inne zagrożenia.</p></div><div class="menu-box"><b>Blue · Characters</b><p>Dr. Harlow, Barney, Ratthew, Ron, Officer Duckman i reszta obsady.</p></div><div class="menu-box"><b>Green · Classes</b><p>Intern, Nurse, Secretary, Paramedic, Doctor, Security, Surgeon i Secret Agent.</p></div><div class="menu-box"><b>Yellow · Anomalies</b><p>Black Eyes, Hollow Face, Three Eyes, Camera Stare, Void i inne sygnały ostrzegawcze.</p></div></div><div class="menu-buttons"><button class="btn primary" id="startBtn">Rozpocznij grę</button><button class="btn" id="menuRulesBtn">Zasady</button></div></div></div>
+<div class="overlay" id="rulesOverlay"><div class="modal"><span class="eyebrow">rules</span><h2>Zasady AnimalUNO</h2><div class="rules-grid"><div class="rule"><b>Dopasowanie</b><br>Kolor, numer albo typ karty specjalnej.</div><div class="rule"><b>Dobieranie</b><br>Dobierasz jedną kartę. Jeśli pasuje, możesz zagrać tylko tę dobraną kartę albo spasować.</div><div class="rule"><b>Skip</b><br>Pomija następnego gracza.</div><div class="rule"><b>Reverse</b><br>Zmienia kierunek kolejki.</div><div class="rule"><b>Draw Two</b><br>Daje +2. Jeśli kolejny gracz ma +2, może dołożyć swoją kartę i przekazać większą karę dalej.</div><div class="rule"><b>Wild</b><br>Ghost pozwala wybrać dowolny kolor.</div><div class="rule"><b>Wild +4</b><br>Stalker jest legalny tylko gdy nie masz karty aktualnego koloru. Następny gracz dobiera 4 i traci turę.</div><div class="rule"><b>UNO</b><br>Przy dwóch kartach zgłoś UNO przed zagraniem przedostatniej. Brak deklaracji oznacza karę dwóch kart.</div></div><div class="menu-buttons"><button class="btn primary" id="closeRulesBtn">Zamknij</button></div></div></div>
 <div class="overlay" id="colorOverlay"><div class="modal"><span class="eyebrow">wild protocol</span><h2>Wybierz kolor</h2><div class="color-grid"><button class="color-btn red" data-color="red">Czerwony</button><button class="color-btn blue" data-color="blue">Niebieski</button><button class="color-btn green" data-color="green">Zielony</button><button class="color-btn yellow" data-color="yellow">Żółty</button></div></div></div>
 <div class="overlay" id="endOverlay"><div class="modal"><span class="eyebrow">shift report</span><h1 id="endTitle">Koniec rundy</h1><p id="endText"></p><div class="menu-buttons"><button class="btn primary" id="againBtn">Zagraj ponownie</button></div></div></div>
 <script src="game.js"></script>
+<script src="cards-redesign.js?v=1"></script>
 
 </body>
 </html>
